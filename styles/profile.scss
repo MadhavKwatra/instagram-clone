@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #000000;
+}
+
+// Make images Responsive
+img {
+  width: 100%;
+  height: auto;
+}
+
+// For the buttons img (svg)
+button {
+  img {
+    width: auto;
+  }
+}
+
+header {
+  margin: 0.8em;
+  ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+
+    .username {
+      font-weight: bold;
+      font-size: 1.5rem;
+      img {
+        display: inline;
+        width: auto;
+      }
+    }
+    button {
+      background: none;
+      border: none;
+      padding: 0.5em;
+
+      svg {
+        width: 2em;
+      }
+    }
+  }
+}
+.about-section {
+  margin: 0 0.8em;
+}
+.about-section {
+  .user-data {
+    display: flex;
+    padding-bottom: 0.5em;
+    ul {
+      display: flex;
+      list-style-type: none;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      span {
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+    }
+
+    .avatar {
+      margin-right: 2em;
+    }
+    img.profile-photo {
+      width: 5em;
+      height: 5em;
+      border-radius: 50%;
+      object-fit: cover;
+      border: #fff 0.2em solid;
+      outline: 0.1em solid #fd1d1d;
+    }
+  }
+
+  .description {
+    p.about {
+      padding-top: 0.1em;
+    }
+  }
+  button.edit {
+    padding: 0.5em;
+    width: 100%;
+    margin-top: 1em;
+    font-size: 0.8rem;
+    font-family: inherit;
+    font-weight: bold;
+    background: none;
+    border: solid 1px #cbcbcb;
+    border-radius: 0.2em;
+  }
+}
+
+.stories {
+  display: flex;
+  justify-content: space-around;
+  margin: 1em 0.8em;
+
+  .story {
+    width: 18%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+      font-size: 0.8rem;
+    }
+  }
+  img.story-image {
+    border-radius: 50%;
+    object-fit: cover;
+    border: #fff 0.2em solid;
+    outline: 0.01em solid #a9a9a9;
+  }
+}
+
+.tab-list {
+  display: flex;
+  justify-content: space-around;
+  button {
+    width: 100%;
+    border: none;
+    background: none;
+    cursor: pointer;
+    // border-bottom: 1px solid #000000;
+    // done throught js
+  }
+  .tagged-btn {
+    // border-bottom: 1px solid #000000;
+    // border: none;
+  }
+
+  .tagged-btn {
+    img.tagged-icon {
+      opacity: 50%;
+    }
+  }
+}
+
+.tab-content {
+  height: 25em;
+
+  .posts,
+  .tagged {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.1em;
+  }
+  .tagged {
+    display: none;
+  }
+}
+.fixedBottomNav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  display: flex;
+  margin: 0;
+  justify-content: space-between;
+  button {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 0.8em 0;
+    &:hover {
+      background-color: #fd1d1d;
+    }
+  }
+}
+
+// TODO - Make Responsive
+// Now just mobile
+@media only screen and (min-width: 435px) {
+  // Center container
+  .container {
+    margin: auto;
+    width: 435px;
+    border: 1px solid #000;
+    .fixedBottomNav {
+      width: 433px;
+      // 😁
+      // centering the bottom nav
+      left: auto;
+      right: auto;
+    }
+  }
+}

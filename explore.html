@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/search.css" />
+
+    <title>Search</title>
+  </head>
+  <body>
+    <header>
+      <form action="#">
+        <input
+          type="search"
+          class="search-bar"
+          name=""
+          id=""
+          placeholder="Search"
+        />
+        <img class="search-icon" src="res/magnifying-glass-solid.svg" alt="" />
+      </form>
+    </header>
+    <main>
+      <!-- Photos Staggederd Grid  -->
+      <div class="photos-container">
+        <img src="" alt="" class="photo" />
+        <img src="" alt="" class="photo" />
+        <img src="" alt="" class="photo" />
+        <img src="" alt="" class="photo" />
+        <img src="" alt="" class="photo" />
+        <img
+          src="https://images.pexels.com/photos/10677497/pexels-photo-10677497.jpeg?cs=srgb&dl=pexels-cottonbro-10677497.jpg&fm=jpg&h=400&w=200&fit=crop"
+          alt=""
+          class="photo-d"
+        />
+        <img
+          src="https://images.pexels.com/photos/5611139/pexels-photo-5611139.jpeg?cs=srgb&dl=pexels-juan-martin-lopez-5611139.jpg&fm=jpg&h=400&w=200&fit=crop"
+          alt=""
+          class="photo-b"
+        />
+        <img src="" alt="" class="photo" />
+        <img src="" alt="" class="photo" />
+        <img src="" alt="" class="photo" />
+        <img src="" alt="" class="photo" />
+        <img src="" alt="" class="photo" />
+        <img src="" alt="" class="photo" />
+        <img src="" alt="" class="photo" />
+        <img src="" alt="" class="photo" />
+        <img src="" alt="" class="photo" />
+        <img src="" alt="" class="photo" />
+        <img src="" alt="" class="photo" />
+        <img src="" alt="" class="photo" />
+        <img src="" alt="" class="photo" />
+      </div>
+    </main>
+
+    <script>
+      function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+      }
+
+      // Random images in search/explore
+      var photos = document.getElementsByClassName("photo");
+      const photosArr = [...photos];
+
+      photosArr.forEach((photo) => {
+        photo.src = `https://picsum.photos/400?random=${getRandomInt(100)}`;
+        console.log(photo.src);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/profile.css" />
+    <link rel="stylesheet" href="styles/feed.css" />
+    <title>Feeds</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <ul>
+          <li>
+            <a href="#" class="logo">
+              <img src="res/instagram-written-logo.svg" alt="" />
+            </a>
+          </li>
+          <li>
+            <button>
+              <!-- Add icon -->
+              <img src="res/add-icon.svg" alt="" />
+            </button>
+            <button>
+              <!-- Heart Icon -->
+              <img src="res/heart-icon.svg" alt="" /></button
+            ><button>
+              <!-- Messenger icon -->
+              <img src="res/messenger-icon.svg" alt="" />
+            </button>
+          </li>
+        </ul>
+      </header>
+      <div class="stories">
+        <div class="story">
+          <img class="story-image" src="https://picsum.photos/200" alt="" />
+          <p>Story 1</p>
+        </div>
+        <div class="story">
+          <img class="story-image" src="https://picsum.photos/200" alt="" />
+          <p>Story 1</p>
+        </div>
+        <div class="story">
+          <img class="story-image" src="https://picsum.photos/200" alt="" />
+          <p>Story 1</p>
+        </div>
+        <div class="story">
+          <img class="story-image" src="https://picsum.photos/200" alt="" />
+          <p>Story 1</p>
+        </div>
+        <div class="story">
+          <img class="story-image" src="https://picsum.photos/200" alt="" />
+          <p>Story 1</p>
+        </div>
+      </div>
+      <div class="posts">
+        <!-- could be component -->
+        <div class="post">
+          <div class="user-header">
+            <div>
+              <img class="profile-photo" src="images/someGirl.jpg" alt="" />
+              <span class="username">Someone</span>
+            </div>
+            <button class="more">
+              <img src="res/more-icon.svg" alt="" />
+            </button>
+          </div>
+          <div class="photos">
+            <img
+              class="post-photo"
+              src="https://picsum.photos/500?random=2"
+              alt=""
+            />
+            <img
+              class="post-photo"
+              src="https://picsum.photos/500?random=1"
+              alt=""
+            />
+            <img
+              class="post-photo"
+              src="https://picsum.photos/500?random=3"
+              alt=""
+            />
+            <img
+              class="post-photo"
+              src="https://picsum.photos/500?random=4"
+              alt=""
+            />
+            <span class="current-image-overlay">
+              <!-- <span class="current-image-text">40</span> -->
+            </span>
+          </div>
+          <div class="post-contribution">
+            <div class="interactions">
+              <button>
+                <!-- like icon -->
+                <img src="res/like-icon.svg" alt="" />
+              </button>
+              <button>
+                <!-- comment icon -->
+                <img src="res/comment-icon.svg" alt="" />
+              </button>
+              <button>
+                <!-- Share icon -->
+                <img src="res/share-icon.svg" alt="" />
+              </button>
+              <span class="dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </span>
+              <button>
+                <!-- collection icon -->
+                <img src="res/collection-icon.svg" alt="" />
+              </button>
+            </div>
+            <div class="likes">
+              <p>100 likes</p>
+            </div>
+            <div class="caption">
+              <p>
+                <span class="username">username</span>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Dolorem, saepe...<span>more</span>
+              </p>
+            </div>
+            <div class="comments">
+              <div class="add-comment">
+                <span>
+                  <img class="profile-photo" src="images/someGirl.jpg" alt="" />
+                </span>
+                <form action="">
+                  <input type="text" placeholder="Add comment..." />
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <p class="view-more">View all 20 comments</p>
+          <p class="posted-on">10 minutes ago</p>
+        </div>
+      </div>
+
+      <div class="fixedBottomNav">
+        <button class="nav-item">
+          <!-- Home Icon -->
+          <img src="res/home-icon.svg" alt="" />
+        </button>
+        <button class="nav-item">
+          <!-- Search Icon -->
+          <img src="res/search-icon.svg" alt="" />
+        </button>
+        <button class="nav-item">
+          <!-- Reels Icon -->
+          <img src="res/reels-icon.svg" alt="" />
+        </button>
+        <button class="nav-item">
+          <!-- Store/Shop Icon -->
+          <img src="res/store-icon.svg" alt="" />
+        </button>
+        <button class="nav-item">
+          <!-- Avatar Icon -->
+          <img src="res/avatar-icon.svg" alt="" />
+        </button>
+      </div>
+    </div>
+    <script>
+      function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+      }
+
+      // Random images in stories
+      var storyImages = document.getElementsByClassName("story-image");
+      const storyImagesArr = [...storyImages];
+
+      storyImagesArr.forEach((storyImg) => {
+        storyImg.src = `https://picsum.photos/200?random=${getRandomInt(100)}`;
+        console.log(storyImg.src);
+      });
+
+      // Slider
+
+      //  Image Slider
+      const currentImageOverlay = document.querySelector(
+        ".current-image-overlay"
+      );
+
+      let currentPostPhoto = 1;
+
+      showSlides(currentPostPhoto);
+
+      // Next/previous controls
+      function plusSlides(n) {
+        showSlides((currentPostPhoto += n));
+      }
+
+      // click listener for arrows to change images in slide container
+
+      document.querySelector("#arrow-right").addEventListener("click", () => {
+        plusSlides(1);
+      });
+
+      document.querySelector("#arrow-left").addEventListener("click", () => {
+        plusSlides(-1);
+      });
+
+      function showSlides(n) {
+        let i;
+
+        const postPhotos = document.getElementsByClassName("post-photo");
+
+        // let slides = document.getElementsByClassName("slide");
+        if (n > postPhotos.length) {
+          currentPostPhoto = 1;
+        }
+        if (n < 1) {
+          currentPostPhoto = postPhotos.length;
+        }
+        for (i = 0; i < postPhotos.length; i++) {
+          postPhotos[i].style.display = "none";
+        }
+        postPhotos[currentPostPhoto - 1].style.display = "block";
+
+        currentImageOverlay.innerHTML = `${currentPostPhoto}/${postPhotos.length}`;
+      }
+    </script>
+    <!-- <script src="js/script.js"></script> -->
+  </body>
+</html>

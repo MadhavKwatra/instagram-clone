@@ -1,0 +1,137 @@
+.stories {
+  border-bottom: #dadada 1px solid;
+  padding-bottom: 0.5em;
+  margin: 0;
+  padding-left: 0.2em;
+}
+.stories margin-bottom img.story-image {
+  outline: 0.1em solid #fd1d1d;
+}
+
+header ul {
+  align-items: center;
+}
+header ul a {
+  color: #000;
+}
+
+.post {
+  margin-bottom: 1em;
+}
+.post .user-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6em 0.3em;
+  align-items: center;
+}
+.post .user-header div {
+  display: flex;
+  align-items: center;
+}
+.post .user-header button {
+  border: none;
+  background: none;
+}
+.post .user-header img.profile-photo {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.post .user-header .username {
+  font-weight: bold;
+  margin-left: 0.5em;
+}
+.post .post-contribution {
+  padding: 0.5em;
+}
+.post .interactions {
+  display: flex;
+}
+.post .interactions button {
+  background: none;
+  border: none;
+}
+.post .interactions button img {
+  width: 2em;
+}
+.post .interactions button:nth-child(-n+2) {
+  margin-right: 1em;
+}
+.post .interactions button:last-child {
+  margin-left: auto;
+}
+.post .interactions span.dots {
+  margin-top: 0.5em;
+  margin: auto;
+}
+.post .interactions span.dots .dot {
+  border-radius: 50%;
+  width: 0.7em;
+  height: 0.7em;
+  background-color: #32b5ff;
+  display: inline-block;
+}
+.post .interactions span.dots .dot:first-child {
+  background-color: #c4c4c4;
+}
+.post .likes {
+  font-weight: bold;
+}
+.post .caption > p .username {
+  font-weight: bold;
+}
+.post .caption > p span:last-child {
+  color: #acabab;
+}
+.post .photos {
+  position: relative;
+}
+.post .photos span.current-image-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 0.5em;
+  border-radius: 1em;
+  padding: 0.2em 0.9em;
+  font-size: 0.8rem;
+  color: #fff;
+}
+.post .comments .add-comment {
+  display: flex;
+  width: 100%;
+  margin-top: 1em;
+}
+.post .comments .add-comment img.profile-photo {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 1em;
+}
+.post .comments .add-comment input {
+  background: none;
+  border-radius: 0.8em;
+  padding: 0.5em 1em;
+  width: 100%;
+  border: #000 1px solid;
+}
+.post .comments .add-comment form {
+  width: 100%;
+}
+.post .posted-on,
+.post .view-more {
+  color: #534f4f;
+}
+.post .posted-on {
+  font-size: 0.9rem;
+  margin-top: 0.5em;
+  color: #acabab;
+}
+
+.posts {
+  min-height: 900px;
+}/*# sourceMappingURL=feed.css.map */
