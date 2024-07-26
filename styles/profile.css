@@ -99,12 +99,15 @@ header ul button svg {
   display: flex;
   justify-content: space-around;
   margin: 1em 0.8em;
+  overflow: scroll;
 }
 .stories .story {
-  width: 18%;
+  width: 500px;
   display: flex;
   flex-direction: column;
+  min-width: 50px;
   align-items: center;
+  margin-right: 0.5em;
 }
 .stories .story p {
   font-size: 0.8rem;
